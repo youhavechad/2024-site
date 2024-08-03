@@ -6,10 +6,11 @@ import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
-// import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
-// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/permalinks';
+import { Image } from "astro:assets";
+import productManagerImage from "../assets/images/productmanager.png";
+
 
 const metadata = {
   title: 'Personal Homepage Demo',
@@ -24,9 +25,7 @@ const metadata = {
         { text: 'Home', href: '#' },
         { text: 'About', href: '#about' },
         { text: 'Resume', href: '#resume' },
-        { text: 'Porfolio', href: '#porfolio' },
-        // { text: 'Blog', href: '#blog' },
-        // { text: 'Github', href: 'https://github.com/onwidget' },
+        { text: 'Skills', href: '/#skills' },
       ]}
       actions={[
         {
@@ -85,7 +84,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      src: productManagerImage,
       alt: 'Colorful Image',
       loading: 'eager',
     }}
@@ -93,16 +92,14 @@ const metadata = {
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
       <p>
-        Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
-        pixel becomes a brushstroke in the canvas of imagination.
+      As an innovative Product Manager, I am dedicated to creating customer-centric solutions that drive the future of AI products. With a deep understanding of user needs and a passion for innovation, I lead the development and implementation of cutting-edge AI solutions. My expertise in product strategy ensures that our machine learning products deliver exceptional value and exceed customer expectations. Let's revolutionize the future together.
       </p>
       <br />
       <p>
-        I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate
-        details of typography, or the vibrant hues of nature during my outdoor escapades.
+      I find inspiration in the world around me, whether through the latest technology trends, industry research, or engaging with customers to understand their pain points and aspirations. By staying customer-focused, I strive to create products that truly make a difference in people's lives.
       </p>
       <br />
-      <p>If you're curious to dive deeper into my work, you can follow me:</p>
+      <p>If you're interested in collaborating or learning more about my work, feel free to reach out to me:</p>
     </Fragment>
 
     <Fragment slot="bg">
@@ -118,14 +115,26 @@ const metadata = {
     items={[
       {
         title:
-          'Graphic Designer <br /> <span class="font-normal">ABC Design Studio, New York, NY</span> <br /> <span class="text-sm font-normal">2021 - Present</span>',
+          'Product Manager <br /> <span class="font-normal">XYZ AI Solutions, San Francisco, CA</span> <br /> <span class="text-sm font-normal">2021 - Present</span>',
+        description: `Lead the product strategy and roadmap for AI solutions, focusing on delivering innovative and impactful products. <br /> Collaborate with cross-functional teams to define product requirements and prioritize features. <br /> Conduct market research and user interviews to identify customer needs and pain points. <br /> Work closely with engineering teams to ensure successful product development and delivery.`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Senior Product Manager <br /> <span class="font-normal">ABC Tech, Seattle, WA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
+        description: `Managed the product lifecycle for AI-powered solutions, from ideation to launch and post-launch optimization. <br /> Defined product vision and strategy based on market trends and customer feedback. <br /> Collaborated with design and engineering teams to create intuitive user interfaces and seamless user experiences. <br /> Conducted competitive analysis and market research to identify growth opportunities.`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Product Manager <br /> <span class="font-normal">ABC Design Studio, New York, NY</span> <br /> <span class="text-sm font-normal">2021 - Present</span>',
         description: `Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications.`,
         icon: 'tabler:briefcase',
       },
       {
         title:
-          'Junior Graphic Designer <br /> <span class="font-normal">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
-        description: `Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools.`,
+          'Junior Product Manager <br /> <span class="font-normal">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
+        description: `Assisted senior product managers in creating product concepts and defining product requirements. <br /> Contributed to the development of product strategies and roadmaps. <br /> Collaborated with the marketing team to ensure consistent messaging and positioning. <br /> Gained hands-on experience in various product management tools and methodologies.`,
         icon: 'tabler:briefcase',
       },
     ]}
@@ -153,46 +162,47 @@ const metadata = {
   <!-- Features3 Widget ************** -->
 
   <Features3
+    id="skills"
     title="Skills"
     subtitle="Discover the proficiencies that allow me to bring imagination to life through design."
     columns={3}
     defaultIcon="tabler:point-filled"
     items={[
       {
-        title: 'Graphic design',
-        description: 'Proficient in crafting visually appealing designs that convey messages effectively.',
+        title: 'Product management',
+        description: 'Experienced in leading the development and implementation of innovative AI products.',
       },
       {
-        title: 'Branding and identity',
-        description: 'Skilled at developing cohesive brand identities, including logos and brand guidelines.',
+        title: 'Product strategy',
+        description: 'Skilled at defining product vision and roadmap based on market trends and customer feedback.',
       },
       {
-        title: 'User-centered design',
-        description: 'Experienced in creating user-friendly interfaces and optimizing user experiences.',
+        title: 'User-centric approach',
+        description: 'Deep understanding of user needs and ability to create products that deliver exceptional value.',
       },
       {
-        title: 'Adobe Creative Suite',
-        description: 'Skilled in using Photoshop, Illustrator, and InDesign to create and edit visual elements.',
+        title: 'Cross-functional collaboration',
+        description: 'Collaborate with cross-functional teams to define product requirements and prioritize features.',
       },
       {
-        title: 'Typography',
-        description: 'Adept in selecting and manipulating typefaces to enhance design aesthetics.',
+        title: 'Market research',
+        description: 'Conduct market research and user interviews to identify customer needs and pain points.',
       },
       {
-        title: 'Color theory',
-        description: 'Proficient in using color to evoke emotions and enhance visual harmony.',
+        title: 'Agile product development',
+        description: 'Work closely with engineering teams to ensure successful product development and delivery.',
       },
       {
-        title: 'Print and digital design',
-        description: 'Knowledgeable in designing for both print materials and digital platforms.',
+        title: 'Strategic thinking',
+        description: 'Ability to think strategically and identify growth opportunities for AI products.',
       },
       {
-        title: 'Attention to detail',
-        description: 'Diligent in maintaining precision and quality in all design work.',
+        title: 'Communication skills',
+        description: 'Effective communication skills to convey product vision and collaborate with stakeholders.',
       },
       {
-        title: 'Adaptability',
-        description: 'Quick to adapt to new design trends, technologies, and client preferences.',
+        title: 'Problem-solving',
+        description: 'Strong problem-solving skills to address challenges and drive product innovation.',
       },
     ]}
   />
